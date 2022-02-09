@@ -20,7 +20,7 @@ sobre = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "/
 sleep(3)
 serviços = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//a[@href='serviços.html' and text()='Serviços']"))).click()
 sleep(3)
-contato = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//a[@href='Contato1.html' and text()='Contato']"))).click()
+contato = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//a[@href='#Contato1.html' and text()='Contato']"))).click()
 sleep(3)
 
 
