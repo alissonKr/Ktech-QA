@@ -7,11 +7,10 @@ from time import sleep
 
 driver = webdriver.Chrome()
 
-driver.get("http://site-lb-prd-1761125143.sa-east-1.elb.amazonaws.com/index.html")
+driver.get("http://www.kavinskytech.com/")
 
 print(driver.current_url) 
-print(driver.title)
-print(driver.desired_capabilities['browserVersion'])
+
 
 sleep(3)
 inicio = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//a[@href='index.html' and text()='Início']"))).click()
@@ -20,10 +19,30 @@ sobre = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "/
 sleep(3)
 serviços = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//a[@href='serviços.html' and text()='Serviços']"))).click()
 sleep(3)
-contato = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//a[@href='#Contato1.html' and text()='Contato']"))).click()
+pesquisar = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//input[@placeholder='Pesquisar']")))
+pesquisar.send_keys("abc123")
+sleep(3)
+fb_icon = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//a[@href='https://www.facebook.com/kavinsky.tech'], img[@src='img/whatsapp.png']"))).click()
+sleep(5)
+driver.execute_script("window.history.go(-1)")
+sleep(3)
+tw_icon = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//a[@href='https://mobile.twitter.com/KavinskyTech']"))).click()
+sleep(5)
+driver.execute_script("window.history.go(-1)")
+sleep(3)
+lk_icon = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//a[@href='https://www.linkedin.com/company/kavinsky-tech']"))).click()
+sleep(5)
+driver.execute_script("window.history.go(-1)")
+sleep(3)
+ig_icon = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//a[@href='https://www.instagram.com/kavinsky.tech/']"))).click()
+sleep(5)
+driver.execute_script("window.history.go(-1)")
+sleep(3)
+wpp_icon = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//a[@href='https://wa.me/5551997352095' and ]"))).click()
+sleep(5)
+driver.execute_script("window.history.go(-1)")
 sleep(3)
 
 
 
-
-driver.close(
+driver.close()
